@@ -1,0 +1,68 @@
+{
+  "LOG_DATA": true,
+  "NODE_RPC": "http://127.0.0.1:7076",
+  "API_ROUTE": "/api",
+  "PORT": 8888,
+  "TRUST_PROXY": false,
+  "MAX_ACTIONS_COUNT": {
+    "account_history": 500,
+    "chain": 500,
+    "frontiers": 500,
+    "pending": 500
+  },
+  "MAX_REQUESTED_ACCOUNTS_COUNT": {
+    "accounts_frontiers": 2,
+    "accounts_pending": 2,
+    "accounts_balances": 2
+  },
+  "AVAILABLE_ACTIONS": [
+    "account_history",
+    "account_info",
+    "account_balance",
+    "accounts_balances",
+    "account_key",
+    "account_representative",
+    "account_weight",
+    "accounts_frontiers",
+    "accounts_pending",
+    "active_difficulty",
+    "available_supply",
+    "block_account",
+    "block_info",
+    "block_count",
+    "block_create",
+    "block_confirm",
+    "blocks_info",
+    "chain",
+    "confirmation_quorum",
+    "delegators_count",
+    "frontiers",
+    "key_create",
+    "pending",
+    "pending_exists",
+    "process",
+    "representatives",
+    "representatives_online",
+    "sign",
+    "successors",
+    "mnano_to_raw",
+    "mnano_from_raw",
+    "work_validate",
+    "validate_account_number",
+    "version",
+    "telemetry",
+    "uptime",
+    "republish"
+  ],
+  "REQUESTS_LIMIT": 1000,
+  "USERS": [{
+    "username": "shryder",
+    "token": "random_string_here",
+    "extra_available_actions": [
+      "telemetry"
+    ]
+  }],
+  "SUPER_IPS": [
+    "::1"
+  ]
+}

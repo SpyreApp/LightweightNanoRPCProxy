@@ -82,6 +82,9 @@ const handleRPCRequest: RequestHandler = async (req, res) => {
         });
       }
     } else {
+      return res.setStatus(403).json({
+        message: "Authorization header is required.",
+      });
       // try {
       //   const rateLimiterRes = await rateLimiter.consume(req.ip, 1);
       //   setRateLimitHeaders(res, rateLimiterRes);
@@ -166,6 +169,7 @@ const handleRPCRequest: RequestHandler = async (req, res) => {
 
       return res.json(body);
     } catch (err) {
+      console.log("Failed to parse JSON response from RPC:", err);
       res.setStatus(500);
 
       /* LOG */ handleRequestLog(req, res);

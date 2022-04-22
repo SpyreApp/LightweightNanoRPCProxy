@@ -1,8 +1,5 @@
 FROM denoland/deno:1.20.6
 
-# The port that your application listens to.
-EXPOSE 1993
-
 WORKDIR /config
 
 COPY config/config.example.json ./config.json
@@ -24,4 +21,4 @@ ADD . .
 # Compile the main app so that it doesn't need to be compiled each startup/entry.
 RUN deno cache index.ts
 
-CMD ["run", "--allow-net", "--allow-read", "--allow-write=log.json", "index.ts"]
+CMD ["run", "--allow-net", "--allow-read", "--allow-write", "index.ts"]

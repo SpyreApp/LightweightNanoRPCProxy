@@ -3,16 +3,18 @@ import type { IAPIConfig } from "./types.d.ts";
 // Load the config file and set defaults
 let CONFIG: string;
 try {
-  CONFIG = await Deno.readTextFile("/config/config.json");
+  CONFIG = await Deno.readTextFile("/app/config/config.json");
 
   if (CONFIG === "") {
     CONFIG = "{}";
   }
-} catch (_) {
+} catch (err) {
+  console.log(err)
   CONFIG = "{}";
 }
+
 export const {
-  LOG_DATA = true,
+  LOG_DATA = false,
   NODE_RPC = "http://127.0.0.1:7076",
   WORK_RPC = "",
   API_ROUTE = "/api",
